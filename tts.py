@@ -60,6 +60,12 @@ def create_tts_client():
 # Initialize the client
 client = create_tts_client()
 
+
+# Or if you want JSON:
+@app.route('/')
+def home():
+    return {"status": "online"}
+
 @app.route('/health', methods=['GET'])
 def health_check():
     """Health check endpoint"""
