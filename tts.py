@@ -291,7 +291,7 @@ if __name__ == '__main__':
     print("  GET  /supported-languages - Get supported languages")
     print("  GET  /health - Health check")
     
-    port = int(os.environ.get("PORT", 8000))
+    port = int(os.environ["PORT"])  # <- no fallback
     app.run(
         host='0.0.0.0',
         port=port,
