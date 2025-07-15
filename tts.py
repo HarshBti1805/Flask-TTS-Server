@@ -268,7 +268,6 @@ def internal_error(error):
     return jsonify({'error': 'Internal server error'}), 500
 
 if __name__ == '__main__':
-    # Check for required environment variables
     required_env_vars = [
         "GOOGLE_CLOUD_PROJECT_ID",
         "GOOGLE_CLOUD_PRIVATE_KEY",
