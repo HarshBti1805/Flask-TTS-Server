@@ -8,6 +8,8 @@ from google.oauth2 import service_account
 import tempfile
 import json
 
+PORT=8000
+
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
 
@@ -295,7 +297,7 @@ if __name__ == '__main__':
     print("  GET  /supported-languages - Get supported languages")
     print("  GET  /health - Health check")
     
-    port = int(os.environ["PORT"])  # <- no fallback
+    port = int(os.environ.get("PORT", PORT))  # Use environment variable or fallback to defined PORT
     app.run(
         host='0.0.0.0',
         port=port,
